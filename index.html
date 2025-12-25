@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order of Triumph</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              background: 'var(--bg-main)',
+              card: 'var(--bg-card)',
+              nav: 'var(--bg-nav)',
+              foreground: 'var(--text-main)',
+              muted: 'var(--text-muted)',
+              accent: 'var(--accent)',
+              'accent-fg': 'var(--accent-foreground)',
+              border: 'var(--border)',
+            },
+            borderRadius: {
+              theme: 'var(--radius)',
+            },
+            boxShadow: {
+              soft: '0 10px 40px -10px rgba(0,0,0,0.08)',
+              glow: '0 0 20px var(--accent-glow)',
+            },
+            animation: {
+              'float': 'float 3s ease-in-out infinite',
+              'bounce-slow': 'bounce 3s infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Default: Cute / Gentle */
+        --bg-main: #fff0f5; /* Lavender Blush */
+        --bg-card: #ffffff;
+        --bg-nav: rgba(255, 255, 255, 0.8);
+        --text-main: #5d4037;
+        --text-muted: #8d6e63;
+        --accent: #ff8fa3; /* Soft Pink */
+        --accent-glow: rgba(255, 143, 163, 0.4);
+        --accent-foreground: #ffffff;
+        --border: #ffc1cc;
+        --radius: 1.5rem;
+      }
+
+      [data-theme='dark'] {
+        --bg-main: #2d2a32;
+        --bg-card: #3a3640;
+        --bg-nav: rgba(58, 54, 64, 0.9);
+        --text-main: #eee0e5;
+        --text-muted: #b0a0a8;
+        --accent: #d8a7b1;
+        --accent-glow: rgba(216, 167, 177, 0.2);
+        --accent-foreground: #2d2a32;
+        --border: #4a4550;
+        --radius: 1rem;
+      }
+
+      body {
+        background-color: var(--bg-main);
+        background-image: 
+          radial-gradient(circle at 10% 20%, rgba(255, 183, 178, 0.2) 0%, transparent 20%),
+          radial-gradient(circle at 90% 80%, rgba(181, 234, 215, 0.2) 0%, transparent 20%);
+        color: var(--text-main);
+        font-family: 'Quicksand', sans-serif;
+        transition: all 0.5s ease;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Nunito', sans-serif;
+      }
+
+      .glass-panel {
+        background: var(--bg-card);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-soft);
+        border-radius: var(--radius);
+      }
+
+      .card-3d-wrap {
+        perspective: 1000px;
+      }
+      
+      .transform-style-3d { transform-style: preserve-3d; }
+      .backface-hidden { backface-visibility: hidden; }
+      .rotate-y-180 { transform: rotateY(180deg); }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "clsx": "https://esm.sh/clsx@^2.1.1",
+    "tailwind-merge": "https://esm.sh/tailwind-merge@^3.4.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
